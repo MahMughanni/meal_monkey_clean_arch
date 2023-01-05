@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 
 abstract class MealEvent extends Equatable {
@@ -8,5 +7,7 @@ abstract class MealEvent extends Equatable {
   }
 }
 
-class GetAllCategoryEvent extends MealEvent {}
+class GetAllCategoryEvent extends MealEvent {
 
+  GetAllCategoryEvent();
+}

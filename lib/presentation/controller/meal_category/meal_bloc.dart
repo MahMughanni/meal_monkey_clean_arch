@@ -1,11 +1,10 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:clean_architecture_meal_monky/core/usecase/base_usecase.dart';
 import 'package:clean_architecture_meal_monky/domain/usecase/get_categories_usecase.dart';
 import '../../../utlites/enums.dart';
 import 'meal_event.dart';
 import 'meal_state.dart';
-
-
 
 class MealBloc extends Bloc<MealEvent, MealState> {
   GetAllCategoriesUseCase getAllCategoriesUseCase;
@@ -16,7 +15,7 @@ class MealBloc extends Bloc<MealEvent, MealState> {
 
   FutureOr<void> _getAllCategory(
       MealEvent event, Emitter<MealState> emit) async {
-    final response = await getAllCategoriesUseCase();
+    final response = await getAllCategoriesUseCase(NoParameters());
     response.fold(
       (l) => emit(state.copyWith(
         mealRequestState: RequestState.error,

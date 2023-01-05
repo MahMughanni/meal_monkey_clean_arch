@@ -7,7 +7,9 @@ import '../controller/meal_category/meal_event.dart';
 import '../controller/meal_category/meal_state.dart';
 
 class MealScreen extends StatelessWidget {
-  const MealScreen({Key? key}) : super(key: key);
+  const MealScreen({Key? key, required this.titel}) : super(key: key);
+
+  final String titel;
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:clean_architecture_meal_monky/presentation/screens/deitals_screen.dart';
+import 'package:clean_architecture_meal_monky/presentation/screens/splash_screen.dart';
 import 'package:clean_architecture_meal_monky/routes/named_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -6,24 +7,32 @@ import '../presentation/screens/main_page.dart';
 
 class GenerateRouter {
   static Route<dynamic> onGenerateRouter(RouteSettings settings) {
-
     final data = settings.arguments;
-
+    var result;
 
     switch (settings.name) {
+      case NamedRoutes.splashRoute:
+        result = const SplashScreen();
+        break;
+
       case NamedRoutes.homeRoute:
-        return MaterialPageRoute(builder: (_) => const MainPage());
+        result = const MainPage();
+        break;
+
       case NamedRoutes.detailsRoute:
-        return MaterialPageRoute(
-            builder: (_) => DetailsScreen(title: data.toString(),),);
+        result = DetailsScreen(
+          title: data.toString(),
+        );
+        break;
+
       default:
-        return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(
-              child: Text('No route defined for ${settings.name}'),
-            ),
+        result = const Scaffold(
+          body: Center(
+            child: Text('No Routes'),
           ),
         );
     }
+
+    return MaterialPageRoute(builder: (BuildContext context) => result);
   }
 }

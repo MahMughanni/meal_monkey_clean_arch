@@ -19,7 +19,8 @@ class MealsShowsSearchBloc extends Bloc<MealShowsSearchEvent, SearchState> {
 
   FutureOr<void> _getMealByName(
       MealShowsSearchEvent event, Emitter<SearchState> emit) async {
-    final response = await getMealByNameUseCase(event.mealTitle);
+    final response =
+        await getMealByNameUseCase(GetMealsParameters(event.mealTitle));
 
     response.fold(
         (l) => emit(

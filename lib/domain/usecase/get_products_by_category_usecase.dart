@@ -4,13 +4,21 @@ import 'package:clean_architecture_meal_monky/domain/entities/products_byCategor
 import 'package:clean_architecture_meal_monky/domain/repository/base_meals_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class GetProductsByCategoryUseCase extends BaseUseCase<List<CategoryProducts>> {
+class GetProductsByCategoryUseCase
+    extends BaseUseCase<List<CategoryProducts>, GetProductsParameters> {
   BaseMealsRepository baseMealsRepository;
 
   GetProductsByCategoryUseCase(this.baseMealsRepository);
 
   @override
-  Future<Either<Failure, List<CategoryProducts>>> call([String? txt]) async {
-    return baseMealsRepository.getCategoryProducts(txt!);
+  Future<Either<Failure, List<CategoryProducts>>> call(
+      GetProductsParameters parameters) async {
+    return baseMealsRepository.getCategoryProducts(parameters.title);
   }
+}
+
+class GetProductsParameters {
+  String title;
+
+  GetProductsParameters(this.title);
 }

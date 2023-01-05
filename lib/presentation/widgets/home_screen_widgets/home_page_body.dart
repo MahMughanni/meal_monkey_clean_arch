@@ -13,7 +13,9 @@ import 'drop_down_btn.dart';
 import 'title_list_home.dart';
 
 class HomePageBody extends StatelessWidget {
-  const HomePageBody({Key? key}) : super(key: key);
+  const HomePageBody({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,6 @@ class HomePageBody extends StatelessWidget {
       child: Scaffold(
         appBar: const CustomAppBar(
           title: 'Good Morning! Meal Monkey',
-          textStyle: TextStyle(color: Colors.black),
         ),
         body: SingleChildScrollView(
           child: SingleChildScrollView(

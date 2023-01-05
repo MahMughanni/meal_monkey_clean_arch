@@ -4,13 +4,15 @@ import 'package:clean_architecture_meal_monky/domain/entities/categories.dart';
 import 'package:clean_architecture_meal_monky/domain/repository/base_meals_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class GetAllCategoriesUseCase extends BaseUseCase<List<Category>> {
+class GetAllCategoriesUseCase
+    extends BaseUseCase<List<Category>, NoParameters> {
   BaseMealsRepository baseMealsRepository;
 
   GetAllCategoriesUseCase(this.baseMealsRepository);
 
   @override
-  Future<Either<Failure, List<Category>>> call([String? txt]) async {
+  Future<Either<Failure, List<Category>>> call(
+      NoParameters noParameters) async {
     return await baseMealsRepository.getAllCategories();
   }
 }
