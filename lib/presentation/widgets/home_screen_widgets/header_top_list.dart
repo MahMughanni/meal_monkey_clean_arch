@@ -36,7 +36,7 @@ class HomePageTopItems extends StatelessWidget {
                 return Container(
                   color: Theme.of(context).backgroundColor,
                   margin: const EdgeInsets.only(left: 0, top: 21),
-                  height: height * .14,
+                  height: height * .17,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,

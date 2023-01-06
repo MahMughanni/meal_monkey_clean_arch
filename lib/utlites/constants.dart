@@ -22,8 +22,9 @@ class AppStrings {
   static const String deliveringTo = 'Delivering to ';
   static const String currentLocation = 'Current Location';
   static const String viewAll = 'View all';
+  static const String search = 'search';
+  static const String searchNothingFound = 'Nothing found';
 }
-
 
 class FontWeightConstants {
   static const FontWeight bold = FontWeight.w700;
@@ -35,5 +36,4 @@ class FontWeightConstants {
   static const FontWeight semiBold = FontWeight.w600;
   static const FontWeight extraBold = FontWeight.w800;
   static const FontWeight mostThick = FontWeight.w900;
-
 }

@@ -2,11 +2,18 @@ import 'package:clean_architecture_meal_monky/core/services/services_locator.dar
 import 'package:clean_architecture_meal_monky/domain/entities/search.dart';
 import 'package:clean_architecture_meal_monky/presentation/controller/search/meals_shows_search_bloc.dart';
 import 'package:clean_architecture_meal_monky/presentation/controller/search/meals_shows_search_event.dart';
+import 'package:clean_architecture_meal_monky/utlites/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../utlites/enums.dart';
 
-class SearchUser extends SearchDelegate {
+class SearchUser extends SearchDelegate<String> {
+  SearchUser()
+      : super(
+            textInputAction: TextInputAction.search,
+            searchFieldStyle:
+                const TextStyle(fontWeight: FontWeightConstants.light ,fontSize: 16));
+
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -46,7 +53,7 @@ class SearchUser extends SearchDelegate {
             case RequestState.loaded:
               if (query.isEmpty) {
                 return const Center(
-                  child: Text('Nothing found'),
+                  child: Text(AppStrings.searchNothingFound),
                 );
               }
               return ShowMeals(meals: meals);
@@ -54,7 +61,7 @@ class SearchUser extends SearchDelegate {
             case RequestState.error:
               meals = [];
               return const Center(
-                child: Text('Nothing found'),
+                child: Text(AppStrings.searchNothingFound),
               );
           }
         },
@@ -83,7 +90,7 @@ class SearchUser extends SearchDelegate {
             case RequestState.loaded:
               if (query.isEmpty) {
                 return const Center(
-                  child: Text('Nothing found'),
+                  child: Text(AppStrings.searchNothingFound),
                 );
               }
 
@@ -131,10 +138,10 @@ class ShowMeals extends StatelessWidget {
                 width: double.infinity,
                 child: Text(
                   myList.strMeal,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4!
+                      .copyWith(color: Colors.white),
                   textAlign: TextAlign.center,
                   maxLines: 1,
                 )),

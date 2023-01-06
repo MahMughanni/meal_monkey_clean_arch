@@ -22,12 +22,11 @@ ThemeData getLightThemeData() => ThemeData(
       textTheme: _getTextTheme(),
       secondaryHeaderColor: AppColorLight.secondaryBackGroundColor,
       bottomNavigationBarTheme: _getBottomNavigationBarThemeData(),
-    );
-
-TextStyle _getTextStyle() => const TextStyle(
-      color: AppColorLight.primaryFontColor,
-      fontSize: 16,
-      fontWeight: FontWeight.w600,
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        elevation: 10,
+        hoverElevation: 10,
+        splashColor: AppColorLight.placeholderColor,
+      ),
     );
 
 AppBarTheme _getAppBarTheme() => AppBarTheme(
@@ -35,6 +34,13 @@ AppBarTheme _getAppBarTheme() => AppBarTheme(
       backgroundColor: AppColorLight.primaryBackGroundColor,
       centerTitle: false,
       toolbarTextStyle: _getTextStyle(),
+      // toolbarTextStyle: _getTextStyle(),
+    );
+
+TextStyle _getTextStyle() => const TextStyle(
+      color: AppColorLight.primaryFontColor,
+      fontSize: 30,
+      fontWeight: FontWeight.w600,
     );
 
 BottomNavigationBarThemeData _getBottomNavigationBarThemeData() =>

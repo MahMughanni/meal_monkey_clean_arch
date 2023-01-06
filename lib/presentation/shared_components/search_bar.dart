@@ -1,3 +1,4 @@
+import 'package:clean_architecture_meal_monky/utlites/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/search_screen_widget/search_meal_widget.dart';
@@ -23,7 +24,7 @@ class SearchBar extends StatelessWidget {
           focusedBorder: _border(pink),
           border: _border(grey),
           enabledBorder: _border(grey),
-          hintText: 'search',
+          hintText: AppStrings.search,
           contentPadding: const EdgeInsets.symmetric(vertical: 20),
           prefixIcon: const Icon(
             Icons.search,
