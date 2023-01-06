@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../../utlites/constants.dart';
-
+import '../../../utlites/global/theme/app_color/app_color_light.dart';
 
 class MostPopularListItems extends StatelessWidget {
   const MostPopularListItems({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    // var height = MediaQuery.of(context).size.height;
+    // var width = MediaQuery.of(context).size.width;
     return Container(
       height: 280,
       color: Colors.white,
@@ -29,8 +29,7 @@ class MostPopularListItems extends StatelessWidget {
                   width: 230,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.red,
-                    image:  const DecorationImage(
+                    image: const DecorationImage(
                       image: NetworkImage(AppConstants.baseImageUrl),
                       fit: BoxFit.cover,
                     ),
@@ -51,17 +50,13 @@ class MostPopularListItems extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(
-                        Icons.star,
-                        color: Colors.orange,
-                        size: 20,
-                      ),
-                      const Text(
+                      const Icon(Icons.star),
+                      Text(
                         "4.9",
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontSize: 13,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline6!
+                            .copyWith(color: AppColorLight.primaryColor),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 8.0),
@@ -72,24 +67,19 @@ class MostPopularListItems extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text: " Cafe",
-                                style: TextStyle(
-                                  color: Colors.grey.shade400,
-                                  fontSize: 13,
-                                ),
+                                style: Theme.of(context).textTheme.headline6,
                               ),
-                              const TextSpan(
+                              TextSpan(
                                 text: ". ",
-                                style: TextStyle(
-                                  color: Colors.orange,
-                                  fontSize: 22,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline3!
+                                    .copyWith(
+                                        color: AppColorLight.primaryColor),
                               ),
-                              const TextSpan(
+                              TextSpan(
                                 text: " Western Food",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 15,
-                                ),
+                                style: Theme.of(context).textTheme.headline6,
                               ),
                             ],
                           ),

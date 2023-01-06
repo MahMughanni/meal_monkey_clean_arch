@@ -1,7 +1,7 @@
 import 'package:clean_architecture_meal_monky/utlites/global/theme/app_color/app_color_dark.dart';
 import 'package:flutter/material.dart';
 
-ThemeData getThemeDataDark() => ThemeData(
+ThemeData getDarkThemeData() => ThemeData(
     // primaryColor: Colors.white,
     appBarTheme: const AppBarTheme(
       centerTitle: false,

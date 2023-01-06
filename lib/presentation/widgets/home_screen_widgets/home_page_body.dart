@@ -1,6 +1,7 @@
 import 'package:clean_architecture_meal_monky/core/services/services_locator.dart';
 import 'package:clean_architecture_meal_monky/presentation/controller/meal_category/meal_bloc.dart';
 import 'package:clean_architecture_meal_monky/presentation/shared_components/search_bar.dart';
+import 'package:clean_architecture_meal_monky/utlites/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../controller/meal_category/meal_event.dart';
@@ -26,7 +27,7 @@ class HomePageBody extends StatelessWidget {
       lazy: false,
       child: Scaffold(
         appBar: const CustomAppBar(
-          title: 'Good Morning! Meal Monkey',
+          title: AppStrings.goodMorningMealMonkey,
         ),
         body: SingleChildScrollView(
           child: SingleChildScrollView(
@@ -34,18 +35,18 @@ class HomePageBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                TopText(),
+                DeliveringText(),
                 CustomDropLocation(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: SearchBar(),
                 ),
                 HomePageTopItems(),
-                TitleList(title: 'Popular Restaurants'),
+                TitleList(title: AppStrings.popularRestaurants),
                 PopularListItems(),
-                TitleList(title: 'Most Popular'),
+                TitleList(title: AppStrings.mostPopular),
                 MostPopularListItems(),
-                TitleList(title: 'Recent Items'),
+                TitleList(title: AppStrings.recentItems),
                 RecentListItems(),
               ],
             ),
@@ -56,19 +57,16 @@ class HomePageBody extends StatelessWidget {
   }
 }
 
-class TopText extends StatelessWidget {
-  const TopText({Key? key}) : super(key: key);
+class DeliveringText extends StatelessWidget {
+  const DeliveringText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 21.0, top: 21),
       child: Text(
-        'Delivering to ',
-        style: TextStyle(
-          color: Colors.grey.shade400,
-          fontSize: 12,
-        ),
+        AppStrings.deliveringTo,
+        style: Theme.of(context).textTheme.headline6,
       ),
     );
   }

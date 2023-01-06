@@ -64,8 +64,6 @@ class ProductsDetails extends StatelessWidget {
                                   myList[index].strMeal,
                                   style: const TextStyle(
                                     fontSize: 17,
-                                    fontWeight: FontWeight.w500,
-                                    color: ColorConstants.txtMainColor,
                                   ),
                                 ),
                               ),
@@ -100,16 +98,12 @@ class ProductsDetails extends StatelessWidget {
                                             const TextSpan(
                                               text: " (142 ratings) ",
                                               style: TextStyle(
-                                                color:
-                                                    ColorConstants.txtMainColor,
                                                 fontSize: 13,
                                               ),
                                             ),
                                             TextSpan(
                                               text: title,
                                               style: const TextStyle(
-                                                color:
-                                                    ColorConstants.txtMainColor,
                                                 fontSize: 13,
                                               ),
                                             ),
@@ -123,8 +117,6 @@ class ProductsDetails extends StatelessWidget {
                                             const TextSpan(
                                               text: " Western Food",
                                               style: TextStyle(
-                                                color:
-                                                    ColorConstants.txtMainColor,
                                                 fontSize: 15,
                                               ),
                                             ),

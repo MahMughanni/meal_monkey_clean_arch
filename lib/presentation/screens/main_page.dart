@@ -1,3 +1,5 @@
+import 'package:clean_architecture_meal_monky/utlites/constants.dart';
+import 'package:clean_architecture_meal_monky/utlites/global/theme/app_color/app_color_light.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/home_screen_widgets/custom_floatingBtn.dart';
@@ -26,36 +28,30 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       extendBody: true,
       body: screen[currentIndex],
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
-        color: Colors.white,
         notchMargin: 5,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          selectedItemColor: Colors.orange,
-          unselectedIconTheme: const IconThemeData(color: Colors.grey),
           currentIndex: currentIndex,
           onTap: onTapNavBottom,
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.dashboard_sharp), label: 'Menu'),
+                icon: Icon(Icons.dashboard_sharp), label: AppStrings.menuBtnNav),
             BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_bag), label: 'offers'),
+                icon: Icon(Icons.shopping_bag), label: AppStrings.offersBtnNav),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.shopping_bag,
                   color: Colors.transparent,
                 ),
                 label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.menu_open_rounded), label: 'More'),
+                icon: Icon(Icons.person), label: AppStrings.profileBtnNav),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.menu_open_rounded), label: AppStrings.moreBtnNav),
           ],
         ),
       ),
@@ -65,7 +61,7 @@ class _MainPageState extends State<MainPage> {
         onBtnPressed: () => setState(() {
           currentIndex = 2;
         }),
-        color: (currentIndex == 2) ? Colors.orange : Colors.grey,
+        color: (currentIndex == 2) ? AppColorLight.primaryColor : Colors.grey,
       ),
     );
   }

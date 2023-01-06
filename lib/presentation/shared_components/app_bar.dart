@@ -1,27 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-  const CustomAppBar({required this.title, Key? key}) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return BaseAppBar(
-      title: title,
-    );
-  }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(50);
-}
-
-class BaseAppBar extends StatelessWidget {
-  const BaseAppBar(
-      {Key? key,
-      required this.title,
-      this.height = 140,
-      this.elevation = 0,
+  const CustomAppBar(
+      {required this.title,
+      Key? key,
+      this.height,
+      this.elevation,
       this.action,
       this.bottom})
       : super(key: key);
@@ -39,8 +23,14 @@ class BaseAppBar extends StatelessWidget {
       bottom: bottom,
       actions: action,
       toolbarHeight: height,
-      elevation: elevation,
-      title: Text(title),
+      elevation: elevation ?? 0,
+      title: Text(
+        title,
+        style: Theme.of(context).textTheme.headline3,
+      ),
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(50);
 }

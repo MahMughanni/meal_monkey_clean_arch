@@ -1,3 +1,4 @@
+import 'package:clean_architecture_meal_monky/utlites/constants.dart';
 import 'package:flutter/material.dart';
 
 class TitleList extends StatelessWidget {
@@ -14,13 +15,12 @@ class TitleList extends StatelessWidget {
         children: [
           Text(
             title,
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.headline4,
           ),
           TextButton(
             onPressed: () {},
             child: const Text(
-              'View all',
-              style: TextStyle(color: Colors.amber, fontSize: 15),
+              AppStrings.viewAll,
             ),
           ),
         ],
