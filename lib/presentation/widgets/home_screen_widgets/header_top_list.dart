@@ -9,7 +9,7 @@ import '../../controller/meal_category/meal_state.dart';
 
 class HomePageTopItems extends StatelessWidget {
   const HomePageTopItems({Key? key}) : super(key: key);
-
+ 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(

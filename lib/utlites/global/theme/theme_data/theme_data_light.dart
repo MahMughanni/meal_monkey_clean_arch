@@ -4,17 +4,8 @@ import '../../../constants.dart';
 import '../app_color/app_color_light.dart';
 
 ThemeData getLightThemeData() => ThemeData(
-      iconTheme:
-          const IconThemeData(color: AppColorLight.primaryColor, size: 20),
-      textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-          primary: AppColorLight.primaryColor,
-          textStyle: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeightConstants.medium,
-          ),
-        ),
-      ),
+      iconTheme: _getIconThemeData(),
+      textButtonTheme: _getTextButtonThemeData(),
       scaffoldBackgroundColor: AppColorLight.primaryBackGroundColor,
       primaryTextTheme: _getTextTheme(),
       appBarTheme: _getAppBarTheme(),
@@ -22,19 +13,35 @@ ThemeData getLightThemeData() => ThemeData(
       textTheme: _getTextTheme(),
       secondaryHeaderColor: AppColorLight.secondaryBackGroundColor,
       bottomNavigationBarTheme: _getBottomNavigationBarThemeData(),
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        elevation: 10,
-        hoverElevation: 10,
-        splashColor: AppColorLight.placeholderColor,
-      ),
+      floatingActionButtonTheme: _getFloatingActionButtonThemeData(),
     );
+
+
+
+IconThemeData _getIconThemeData() =>
+    const IconThemeData(color: AppColorLight.primaryColor, size: 20);
+
+FloatingActionButtonThemeData _getFloatingActionButtonThemeData() =>
+    const FloatingActionButtonThemeData(
+      elevation: 10,
+      hoverElevation: 10,
+      splashColor: AppColorLight.placeholderColor,
+    );
+
+TextButtonThemeData _getTextButtonThemeData() => TextButtonThemeData(
+        style: TextButton.styleFrom(
+      primary: AppColorLight.primaryColor,
+      textStyle: const TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeightConstants.medium,
+      ),
+    ));
 
 AppBarTheme _getAppBarTheme() => AppBarTheme(
       iconTheme: const IconThemeData(color: AppColorLight.appBarIconDarkColor),
-      backgroundColor: AppColorLight.primaryBackGroundColor,
-      centerTitle: false,
+      backgroundColor: AppColorLight.primaryBackGroundColor, centerTitle: false,
       toolbarTextStyle: _getTextStyle(),
-      // toolbarTextStyle: _getTextStyle(),
+// toolbarTextStyle: _getTextStyle(),
     );
 
 TextStyle _getTextStyle() => const TextStyle(
