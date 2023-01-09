@@ -1,9 +1,10 @@
-import 'package:clean_architecture_meal_monky/presentation/screens/deitals_screen.dart';
-import 'package:clean_architecture_meal_monky/presentation/screens/splash_screen.dart';
 import 'package:clean_architecture_meal_monky/routes/named_routes.dart';
 import 'package:flutter/material.dart';
 
-import '../presentation/screens/main_page.dart';
+import '../presentation/pages/deitals_screen.dart';
+import '../presentation/pages/main_page.dart';
+import '../presentation/pages/splash_screen.dart';
+
 
 class GenerateRouter {
   static Route<dynamic> onGenerateRouter(RouteSettings settings) {
