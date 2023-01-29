@@ -5,11 +5,10 @@ import '../presentation/pages/deitals_screen.dart';
 import '../presentation/pages/main_page.dart';
 import '../presentation/pages/splash_screen.dart';
 
-
 class GenerateRouter {
   static Route<dynamic> onGenerateRouter(RouteSettings settings) {
     final data = settings.arguments;
-    var result;
+    dynamic result;
 
     switch (settings.name) {
       case NamedRoutes.splashRoute:

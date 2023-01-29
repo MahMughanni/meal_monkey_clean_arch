@@ -3,9 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:clean_architecture_meal_monky/domain/repository/base_meals_repository.dart';
 import 'package:clean_architecture_meal_monky/utlites/enums.dart';
-import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 
 import '../../../domain/entities/products_byCategory.dart';
 
