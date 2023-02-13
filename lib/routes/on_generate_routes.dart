@@ -20,8 +20,7 @@ class GenerateRouter {
         break;
 
       case NamedRoutes.detailsRoute:
-        result = DetailsScreen(
-          title: data.toString(),
+        result = DetailsScreen(title: data.toString(),
         );
         break;
 
